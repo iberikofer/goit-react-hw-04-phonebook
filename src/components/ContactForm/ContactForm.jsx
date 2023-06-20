@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 export const ContactForm = ({ contacts, onSubmit }) => {
   const handleSubbmit = e => {
@@ -51,3 +52,13 @@ export const ContactForm = ({ contacts, onSubmit }) => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+};

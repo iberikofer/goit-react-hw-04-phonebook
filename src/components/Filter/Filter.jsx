@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Filter = ({ handleSavingFilter }) => {
   const handleInputChange = e => {
     handleSavingFilter(e.target.value);
@@ -17,3 +19,7 @@ export const Filter = ({ handleSavingFilter }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  handleSavingFilter: PropTypes.func.isRequired,
+};

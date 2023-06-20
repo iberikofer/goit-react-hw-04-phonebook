@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ContactList = ({ contacts, filterText, handleDeleteContact }) => {
   const buildMarkup = () => {
     const filteredContacts =
@@ -37,3 +39,14 @@ export const ContactList = ({ contacts, filterText, handleDeleteContact }) => {
 };
 
 export default ContactList;
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  filterText: PropTypes.string.isRequired,
+};
